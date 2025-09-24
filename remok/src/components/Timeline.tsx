@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { CheckCircle, Circle, Calendar, Users, Target, Rocket, Award, MessageCircle, Calculator, ShoppingCart, Database, GraduationCap } from "lucide-react";
+import { CheckCircle, Circle, Calendar, MessageCircle, Calculator, ShoppingCart, Database, GraduationCap } from "lucide-react";
 
 interface TimelinePhase {
   id: number;

@@ -22,7 +22,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const login = (code: string): boolean => {
-    if (VALID_CODES.includes(code.toUpperCase())) {
+    if (VALID_CODES.includes(code.trim())) {
       setIsAuthenticated(true);
       localStorage.setItem('isAuthenticated', 'true');
       return true;

@@ -25,25 +25,16 @@ const phases: TimelinePhase[] = [
   },
   {
     id: 2,
-    title: "Phase 2 - Module Comptabilité & Contact",
-    description: "Implémentation du module comptabilité et gestion des contacts",
+    title: "Phase 2 - Modules Comptabilité, Contact, Vente & Achat",
+    description: "Implémentation complète des modules comptabilité, gestion des contacts, ventes et achats",
     duration: "1 semaine",
     status: 'upcoming',
     icon: <Calculator className="w-6 h-6" />,
-    deliverables: ["Module Comptabilité", "Module Contact"]
+    deliverables: ["Module Comptabilité", "Module Contact", "Module Vente", "Module Achat"]
   },
   {
     id: 3,
-    title: "Phase 3 - Modules Vente & Achat",
-    description: "Implémentation des modules de gestion des ventes et des achats",
-    duration: "1 semaine",
-    status: 'upcoming',
-    icon: <ShoppingCart className="w-6 h-6" />,
-    deliverables: ["Module Vente", "Module Achat"]
-  },
-  {
-    id: 4,
-    title: "Phase 4 - Migration des Données",
+    title: "Phase 3 - Migration des Données",
     description: "Migration et transfert sécurisé des données existantes vers le nouveau système",
     duration: "1 semaine",
     status: 'upcoming',
@@ -51,8 +42,8 @@ const phases: TimelinePhase[] = [
     deliverables: []
   },
   {
-    id: 5,
-    title: "Phase 5 - Formation des Équipes",
+    id: 4,
+    title: "Phase 4 - Formation des Équipes",
     description: "Formation complète des équipes à l'utilisation du nouveau système",
     duration: "1 semaine",
     status: 'upcoming',
@@ -77,18 +68,6 @@ export function OdooTimeline() {
     }
   };
 
-  const getStatusIcon = (status: string) => {
-    switch (status) {
-      case 'completed':
-        return <CheckCircle className="w-6 h-6 text-green-500" />;
-      case 'current':
-        return <Circle className="w-6 h-6 text-blue-500 fill-current" />;
-      case 'upcoming':
-        return <Circle className="w-6 h-6 text-gray-400" />;
-      default:
-        return <Circle className="w-6 h-6 text-gray-400" />;
-    }
-  };
 
   const getStatusBadge = (status: string) => {
     switch (status) {
@@ -130,7 +109,7 @@ export function OdooTimeline() {
             </div>
             <div>
               <h1 className="text-2xl font-medium text-primary">Intégration Odoo</h1>
-              <p className="text-muted-foreground">Timeline de développement - 5 phases</p>
+              <p className="text-muted-foreground">Timeline de développement - 4 phases</p>
             </div>
           </div>
         </div>
@@ -185,9 +164,9 @@ export function OdooTimeline() {
           </div>
 
           {/* Cartes détaillées */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 justify-items-center">
             {phases.map((phase) => (
-              <Card key={phase.id} className={`transition-all duration-300 hover:shadow-lg ${
+              <Card key={phase.id} className={`w-full max-w-sm transition-all duration-300 hover:shadow-lg ${
                 phase.status === 'current' ? 'ring-2 ring-blue-500' : ''
               }`}>
                 <CardHeader className="pb-3">
@@ -221,11 +200,11 @@ export function OdooTimeline() {
         <div className="mt-12 p-6 bg-primary/5 rounded-lg border border-primary/20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center">
-              <div className="text-2xl mb-1 text-primary font-bold">5</div>
+              <div className="text-2xl mb-1 text-primary font-bold">4</div>
               <div className="text-sm text-muted-foreground">Phases</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl mb-1 text-primary font-bold">5</div>
+              <div className="text-2xl mb-1 text-primary font-bold">4</div>
               <div className="text-sm text-muted-foreground">Semaines</div>
             </div>
             <div className="text-center">

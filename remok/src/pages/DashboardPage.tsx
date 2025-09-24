@@ -1,11 +1,9 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import { 
   Database, 
-  Globe, 
   ArrowRight, 
   LogOut, 
   Calendar,
@@ -29,8 +27,8 @@ export function DashboardPage() {
       title: 'Intégration Odoo',
       description: 'Implémentation complète du système Odoo avec modules comptabilité, vente, achat et formation des équipes.',
       icon: <Database className="w-8 h-8" />,
-      phases: 5,
-      duration: '5 semaines',
+      phases: 4,
+      duration: '4 semaines',
       status: 'À venir',
       color: 'bg-primary',
       route: '/timeline/odoo',
@@ -38,15 +36,15 @@ export function DashboardPage() {
     },
     {
       id: 'website',
-      title: 'Site Web avec IA',
-      description: 'Développement d\'un site web moderne avec intégration d\'intelligence artificielle pour améliorer l\'expérience utilisateur.',
+      title: 'E-commerce + Chatbot IA',
+      description: 'Intégration e-commerce Odoo avec chatbot intelligent pour améliorer l\'expérience client et automatiser les ventes.',
       icon: <Brain className="w-8 h-8" />,
-      phases: 4,
-      duration: '4 semaines',
+      phases: 3,
+      duration: '3 semaines',
       status: 'À venir',
       color: 'bg-secondary',
       route: '/timeline/website',
-      features: ['Design UI/UX', 'Frontend React', 'Intégration IA', 'Tests & Déploiement']
+      features: ['Analyse & Cadrage', 'Site E-commerce Odoo', 'Chatbot Intelligent', 'Formation & Tests']
     }
   ];
 
@@ -95,7 +93,7 @@ export function DashboardPage() {
                 <Calendar className="w-6 h-6 text-primary" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-primary">9</p>
+                <p className="text-2xl font-bold text-primary">7</p>
                 <p className="text-muted-foreground text-sm">Semaines Total</p>
               </div>
             </CardContent>

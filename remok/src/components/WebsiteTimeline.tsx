@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { CheckCircle, Circle, Calendar, ArrowLeft, Palette, Code, Brain, Rocket } from "lucide-react";
+import { CheckCircle, Circle, Calendar, ArrowLeft, MessageSquare, ShoppingCart, Bot, CheckSquare } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 interface TimelinePhase {
@@ -16,39 +16,30 @@ interface TimelinePhase {
 const phases: TimelinePhase[] = [
   {
     id: 1,
-    title: "Phase 1 - Planification & Design",
-    description: "Analyse des besoins, création de maquettes et définition de l'architecture du site web",
-    duration: "1 semaine",
+    title: "Semaine 1 - Analyse",
+    description: "Ateliers de cadrage et spécifications fonctionnelles pour l'e-commerce et chatbot",
+    duration: "2 jours",
     status: 'upcoming',
-    icon: <Palette className="w-6 h-6" />,
-    deliverables: ["Cahier des charges", "Maquettes UI/UX", "Architecture technique"]
+    icon: <MessageSquare className="w-6 h-6" />,
+    deliverables: ["Compréhension des besoins", "Définition des flux e-commerce/Odoo", "Cahier des charges site + chatbot"]
   },
   {
     id: 2,
-    title: "Phase 2 - Développement Frontend",
-    description: "Développement de l'interface utilisateur avec React et intégration des composants",
-    duration: "1.5 semaines",
+    title: "Semaine 2 - Implémentation E-commerce",
+    description: "Mise en place du site e-commerce Odoo avec connexion stock et ventes",
+    duration: "4 jours",
     status: 'upcoming',
-    icon: <Code className="w-6 h-6" />,
-    deliverables: ["Interface React", "Composants réutilisables", "Design responsive"]
+    icon: <ShoppingCart className="w-6 h-6" />,
+    deliverables: ["Site e-commerce Odoo", "Connexion stock et ventes", "Fiches produits", "Tunnel commande et paiement"]
   },
   {
     id: 3,
-    title: "Phase 3 - Intégration IA",
-    description: "Intégration des fonctionnalités d'intelligence artificielle et APIs externes",
-    duration: "1 semaine",
+    title: "Semaine 3 - Implémentation IA / Chatbot",
+    description: "Déploiement chatbot intelligent connecté à la FAQ et formation avec données internes",
+    duration: "4 jours",
     status: 'upcoming',
-    icon: <Brain className="w-6 h-6" />,
-    deliverables: ["APIs IA intégrées", "Chatbot intelligent", "Personnalisation contenu"]
-  },
-  {
-    id: 4,
-    title: "Phase 4 - Tests & Déploiement",
-    description: "Tests complets, optimisation des performances et mise en production",
-    duration: "0.5 semaine",
-    status: 'upcoming',
-    icon: <Rocket className="w-6 h-6" />,
-    deliverables: ["Tests automatisés", "Optimisation SEO", "Mise en production"]
+    icon: <Bot className="w-6 h-6" />,
+    deliverables: ["Chatbot intelligent", "Intégration widget conversationnel", "Formation FAQ/produits", "Tests utilisateurs"]
   }
 ];
 
@@ -120,8 +111,8 @@ export function WebsiteTimeline() {
               />
             </div>
             <div>
-              <h1 className="text-2xl font-medium text-secondary">Site Web avec IA</h1>
-              <p className="text-muted-foreground">Timeline de développement - 4 phases</p>
+              <h1 className="text-2xl font-medium text-secondary">Intégration E-commerce + Chatbot IA</h1>
+              <p className="text-muted-foreground">Timeline de développement - 3 phases</p>
             </div>
           </div>
         </div>
@@ -133,11 +124,11 @@ export function WebsiteTimeline() {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-6 mb-6">
             <div className="w-16 h-16 bg-secondary/10 rounded-lg flex items-center justify-center border-2 border-secondary/20">
-              <Brain className="w-8 h-8 text-secondary" />
+              <ShoppingCart className="w-8 h-8 text-secondary" />
             </div>
             <div>
-              <h2 className="text-3xl mb-2 text-secondary">Développement Site Web avec IA</h2>
-              <p className="text-muted-foreground">Création d'une plateforme web moderne avec intelligence artificielle</p>
+              <h2 className="text-3xl mb-2 text-secondary">Ligne du temps – Intégration E-commerce + Chatbot Intelligent</h2>
+              <p className="text-muted-foreground">Site e-commerce opérationnel relié au stock avec chatbot intelligent fonctionnel</p>
             </div>
           </div>
         </div>
@@ -176,9 +167,9 @@ export function WebsiteTimeline() {
           </div>
 
           {/* Cartes détaillées */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12 justify-items-center">
             {phases.map((phase) => (
-              <Card key={phase.id} className={`transition-all duration-300 hover:shadow-lg ${
+              <Card key={phase.id} className={`w-full max-w-sm transition-all duration-300 hover:shadow-lg ${
                 phase.status === 'current' ? 'ring-2 ring-blue-500' : ''
               }`}>
                 <CardHeader className="pb-3">
@@ -212,11 +203,11 @@ export function WebsiteTimeline() {
         <div className="mt-12 p-6 bg-secondary/5 rounded-lg border border-secondary/20">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-2xl mb-1 text-secondary font-bold">4</div>
+              <div className="text-2xl mb-1 text-secondary font-bold">3</div>
               <div className="text-sm text-muted-foreground">Phases</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl mb-1 text-secondary font-bold">4</div>
+              <div className="text-2xl mb-1 text-secondary font-bold">3</div>
               <div className="text-sm text-muted-foreground">Semaines</div>
             </div>
             <div className="text-center">
@@ -224,8 +215,8 @@ export function WebsiteTimeline() {
               <div className="text-sm text-muted-foreground">Progression</div>
             </div>
             <div className="text-center">
-              <div className="text-2xl mb-1 text-secondary font-bold">IA</div>
-              <div className="text-sm text-muted-foreground">Intégration</div>
+              <div className="text-2xl mb-1 text-secondary font-bold">E-commerce</div>
+              <div className="text-sm text-muted-foreground">+ Chatbot IA</div>
             </div>
           </div>
         </div>
