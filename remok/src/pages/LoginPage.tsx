@@ -31,7 +31,7 @@ export function LoginPage() {
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center p-6">
-      <div className="w-full max-w-md">
+      <div className="w-full max-w-sm">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-6 mb-6">
@@ -99,12 +99,6 @@ export function LoginPage() {
               </button>
             </form>
 
-            {/* Help text */}
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <p className="text-xs text-muted-foreground text-center">
-                Codes de test disponibles: ADMIN123, DEV2024, PROJECT01
-              </p>
-            </div>
           </CardContent>
         </Card>
       </div>
