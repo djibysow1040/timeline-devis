@@ -8,7 +8,7 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-const VALID_CODES = ['RenokXHoopoeFullAutamisation100%']; // Official access code
+const VALID_CODES = ['RenokXHoopoeFullAutomatisation100%']; // Official access code
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

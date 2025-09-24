@@ -54,12 +54,12 @@ export function LoginPage() {
         </div>
 
         {/* Login Form */}
-        <Card>
-          <CardHeader>
-            <CardTitle className="text-center">Authentification</CardTitle>
+        <Card className="shadow-lg">
+          <CardHeader className="pb-4">
+            <CardTitle className="text-center text-lg">Authentification</CardTitle>
           </CardHeader>
           <CardContent>
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="code" className="block text-sm font-medium mb-2">
                   Code d'accès
@@ -71,29 +71,29 @@ export function LoginPage() {
                     value={code}
                     onChange={(e) => setCode(e.target.value)}
                     placeholder="Entrez votre code..."
-                    className="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-input-background"
+                    className="w-full px-3 py-2.5 border border-border rounded-md focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all bg-input-background text-sm"
                     required
                   />
                   <button
                     type="button"
                     onClick={() => setShowCode(!showCode)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
                   >
-                    {showCode ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                    {showCode ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
                 </div>
               </div>
 
               {error && (
-                <div className="p-3 bg-red-50 border border-red-200 rounded-lg">
-                  <p className="text-red-600 text-sm">{error}</p>
+                <div className="p-2.5 bg-red-50 border border-red-200 rounded-md">
+                  <p className="text-red-600 text-xs">{error}</p>
                 </div>
               )}
 
               <button
                 type="submit"
                 disabled={isLoading || !code.trim()}
-                className="w-full bg-primary text-primary-foreground py-3 px-4 rounded-lg font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="w-full bg-primary text-primary-foreground py-2.5 px-4 rounded-md font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all text-sm"
               >
                 {isLoading ? 'Vérification...' : 'Se connecter'}
               </button>
